@@ -14,13 +14,7 @@
     --overlay: rgba(0, 0, 0, 0.5);
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: midnightblue;
-    padding-top: 60px; /* Prevents content overlap with fixed navbar */
-}
+
 
 /* Full-Screen Header */
 header {
@@ -184,6 +178,55 @@ section {
     color: var(--primary-color);
     margin-bottom: 20px;
 }
+
+/* Services Section */
+.services {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap; /* Ensures items wrap on smaller screens */
+}
+
+.service-card {
+    background-color: #e6e6e6;
+    padding: 30px;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Responsive Fix for Mobile */
+@media (max-width: 768px) {
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 90%; /* Each service takes up more space */
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-card {
+        width: 100%; /* Full width on smaller screens */
+        font-size: 16px; /* Adjust text size */
+        padding: 15px;
+    }
+}
+
 
 /* Featured Cars */
 .featured-car-card {
@@ -508,3 +551,111 @@ footer p {
 .back-home-link:hover {
     text-decoration: underline;
 }
+
+/* ------------ For tablets (screens smaller than 768px) ------------ */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px 5%;
+    }
+
+    .header-text {
+        margin-top: 60%;
+        font-size: 20px;
+    }
+
+    .header-text h1 {
+        font-size: 40px;
+    }
+
+    .sub-title {
+        font-size: 50px;
+    }
+
+    .about-col-1,
+    .about-col-2 {
+        flex-basis: 100%;
+    }
+
+    .about-col-1 {
+        text-align: center;
+    }
+
+    .about-col-1 img {
+        width: 90%;
+    }
+
+    .skills-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .skill {
+        font-size: 35px;
+    }
+
+    .services-list {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .work-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .contact-left,
+    .contact-right {
+        flex-basis: 100%;
+    }
+}
+
+/* ------------ For mobile devices (screens smaller than 480px) ------------ */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px 3%;
+    }
+
+    .header-text {
+        margin-top: 80%;
+        font-size: 16px;
+    }
+
+    .header-text h1 {
+        font-size: 30px;
+    }
+
+    .sub-title {
+        font-size: 35px;
+    }
+
+    .about-col-1 img {
+        width: 100%;
+    }
+
+    .skills-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill {
+        font-size: 30px;
+    }
+
+    .services-list {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .work-list {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .contact-left,
+    .contact-right {
+        flex-basis: 100%;
+    }
+
+    .copyright {
+        font-size: 12px;
+        padding: 15px 0;
+    }
+}
+
